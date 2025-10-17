@@ -5,6 +5,7 @@
 #include <sstream>
 #include "User.h"
 #include "Utils.h"
+#include "UserFile.h"
 
 using namespace std;
 
@@ -16,13 +17,13 @@ class UserManager{
     User provideNewUserData();
     int getNewUserId();
     bool doesLoginExist(string login);
+    UserFile usersFile;
 
 public:
-//    UzytkownikMenedzer(string nazwaPlikuZUzytkownikami) : plikZUzytkownikami(nazwaPlikuZUzytkownikami) {
-//        uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
-//    }
+    UserManager(string usersFileName) : usersFile(usersFileName){
+        users = usersFile.readUsersFromFile(users);
+    }
     void registerUser();
-//    void wczytajUzytkownikowZPliku();
     void userLogIn();
     void userLogOut();
     void changeLoggedUserPassword();

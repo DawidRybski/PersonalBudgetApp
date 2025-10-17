@@ -8,6 +8,7 @@ class BudgetApp{
     UserManager userManager;
 
 public:
+    BudgetApp(string usersFileName) : userManager(usersFileName){};
     char selectAnOptionFromTheMainMenu();
     void registerUser();
     void userLogIn();

@@ -55,7 +55,7 @@ void UserManager::registerUser(){
     User user = provideNewUserData();
 
     users.push_back(user);
-//    plikZUzytkownikami.dopiszUzytkownikaDoPliku(uzytkownik);
+    usersFile.addUserToFile(user);
 
     cout << endl << "Konto zalozono pomyslnie" << endl << endl;
     system("pause");
@@ -111,11 +111,11 @@ void UserManager::changeLoggedUserPassword(){
         if (itr -> getId() == loggedUserId)
         {
             itr -> setPassword(newPassword);
+            usersFile.changeUserInFile(users, *itr, newPassword);
             cout << "Haslo zostalo zmienione." << endl << endl;
             system("pause");
         }
     }
-//    plikZUzytkownikami.zapiszWszystkichUzytkownikowDoPliku(uzytkownicy);
 }
 
 void UserManager::userLogOut(){
@@ -129,8 +129,7 @@ bool UserManager::isUserLogged(){
         return false;
 }
 
-void UserManager::logInTest()
-{
+void UserManager::logInTest(){
     for (auto& i:users){
         if (i.getId() == loggedUserId)
         {

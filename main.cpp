@@ -6,7 +6,7 @@ using namespace std;
 
 int main()
 {
-    BudgetApp budgetApp;
+    BudgetApp budgetApp("users.xml");
     User user;
     char choice;
 
@@ -39,7 +39,6 @@ int main()
             budgetApp.changeLoggedUserPassword();
 
             budgetApp.userLogOut();
-            system("pause");
         }
     }
 }
