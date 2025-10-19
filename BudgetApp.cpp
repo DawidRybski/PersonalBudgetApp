@@ -6,10 +6,15 @@ void BudgetApp::registerUser(){
 
 void BudgetApp::userLogIn(){
     userManager.userLogIn();
+    if(userManager.isUserLogged()){
+        incomeManager = new IncomeManager(userManager.getLoggedUserId());
+    }
 }
 
 void BudgetApp::userLogOut(){
     userManager.userLogOut();
+    delete incomeManager;
+    incomeManager = nullptr;
 }
 
 void BudgetApp::changeLoggedUserPassword(){
@@ -38,4 +43,14 @@ bool BudgetApp::isUserLogged(){
 
 void BudgetApp::logInTest(){
     userManager.logInTest();
+}
+
+void BudgetApp::addTransaction(char option){
+    if (option == '1')
+    {
+        incomeManager->addTransaction();
+    }
+
+    incomeManager->testDisplayIncomes();
+    system("pause");
 }

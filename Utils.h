@@ -16,11 +16,11 @@ public:
     static double readDouble();
     static string addZeroToSingleDigitNumber(int value);
     static string getCurrentDate();
-    bool isLeapYear(int year);
-    bool isValidDate(string date);
-    string provideValidDate();
-    string getlastDayOfMonth(int year, int month);
-    string getFirstDayOfMonth(int year, int month);
+    static bool isLeapYear(int year);
+    static bool isValidDate(string date);
+    static string provideValidDate();
+    static string getlastDayOfMonth(int year, int month);
+    static string getFirstDayOfMonth(int year, int month);
 };
 
 #endif

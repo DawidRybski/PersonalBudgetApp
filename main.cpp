@@ -35,8 +35,7 @@ int main()
         } else {
             budgetApp.logInTest();
 
-            cout << "Zmiana hasla: ";
-            budgetApp.changeLoggedUserPassword();
+            budgetApp.addTransaction('1');
 
             budgetApp.userLogOut();
         }
