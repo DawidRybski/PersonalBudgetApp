@@ -1,5 +1,6 @@
 #ifndef TRANSACTIONMANAGER_H
 #define TRANSACTIONMANAGER_H
+#include "XmlFile.h"
 
 class TransactionManager{
     const int LOGGED_USER_ID;

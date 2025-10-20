@@ -1,11 +1,10 @@
 #include <iostream>
-#include <fstream>
 #include <vector>
 #include "Markup.h"
 #include "XmlFile.h"
 #include "User.h"
 
-class UserFile : XmlFile{
+class UserFile : public XmlFile{
 public:
     UserFile(string userFileName) : XmlFile(userFileName){};
     void addUserToFile(User user);

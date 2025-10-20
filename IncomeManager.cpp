@@ -4,7 +4,7 @@ void IncomeManager::addTransaction(){
     Income income = provideDataOfTheNewIncome();
     incomes.push_back(income);
 
-//    addIncomeToFile(income);
+    incomesFile.addTransactionToFile(income);
 
     cout << endl << "Przychod zostal zarejestrowany" << endl << endl;
     system("pause");
