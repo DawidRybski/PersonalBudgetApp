@@ -9,9 +9,16 @@
 #include "Markup.h"
 
 class IncomesFile : public TransactionsFile<Income>{
+    vector <Income> incomes;
+    int lastIncomeId;
+
 public:
-    IncomesFile(string incomesFileName) : TransactionsFile(incomesFileName){};
+    IncomesFile(string incomesFileName) : TransactionsFile(incomesFileName){
+        lastIncomeId = 0;
+    };
     void addTransactionToFile(Income &income) override;
+    vector <Income> readTransactionsFromfile(int loggedUserId) override;
+    int getLastIncomeIdFromFile();
 };
 
 #endif

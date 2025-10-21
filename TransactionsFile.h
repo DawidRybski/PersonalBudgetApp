@@ -8,6 +8,7 @@ class TransactionsFile : public XmlFile{
 public:
     TransactionsFile(string transactionFileName) : XmlFile(transactionFileName){};
     virtual void addTransactionToFile(T &transaction) = 0;
+    virtual vector <T> readTransactionsFromfile(int loggedUserId) = 0;
 };
 
 

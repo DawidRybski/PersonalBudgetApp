@@ -14,10 +14,11 @@ class IncomeManager : public TransactionManager{
     IncomesFile incomesFile;
 
     Income provideDataOfTheNewIncome();
-    int getNewIncomeId();
 
 public:
-    IncomeManager(int loggedUserId, string fileName) : TransactionManager(loggedUserId), incomesFile(fileName){};
+    IncomeManager(int loggedUserId, string fileName) : TransactionManager(loggedUserId), incomesFile(fileName){
+        incomes = incomesFile.readTransactionsFromfile(loggedUserId);
+    };
     void addTransaction() override;
     void testDisplayIncomes();
 };

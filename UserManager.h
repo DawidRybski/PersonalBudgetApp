@@ -21,7 +21,7 @@ class UserManager{
 
 public:
     UserManager(string usersFileName) : usersFile(usersFileName){
-        users = usersFile.readUsersFromFile(users);
+        usersFile.readUsersFromFile(users);
     }
     void registerUser();
     void userLogIn();
@@ -29,5 +29,4 @@ public:
     void changeLoggedUserPassword();
     int getLoggedUserId();
     bool isUserLogged();
-    void logInTest();
 };

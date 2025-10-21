@@ -129,17 +129,3 @@ bool UserManager::isUserLogged(){
         return false;
 }
 
-void UserManager::logInTest(){
-    for (auto& i:users){
-        if (i.getId() == loggedUserId)
-        {
-            cout << "Dane uzytkownika po zalogowaniu: " << endl;
-            cout << "Id: " << i.getId() << endl;
-            cout << "Imie: " << i.getName() << endl;
-            cout << "Nazwisko: " << i.getSurname() << endl;
-            cout << "Login: " << i.getLogin() << endl;
-            cout << "Haslo: " << i.getPassword() << endl << endl;
-        }
-    }
-}
-
