@@ -23,13 +23,12 @@ void UserFile::addUserToFile(User user) {
     xml.Save(getFileName());
 }
 
-vector <User> UserFile::readUsersFromFile(vector <User> &users){
+void UserFile::readUsersFromFile(vector <User> &users){
     CMarkup xml;
     User user;
 
     if (!xml.Load(getFileName())) {
         cout << "Nie udało się wczytać pliku XML!" << endl;
-        return users;
     }
 
     if (xml.FindElem("Users")) {
@@ -60,8 +59,6 @@ vector <User> UserFile::readUsersFromFile(vector <User> &users){
 
         xml.OutOfElem();
     }
-
-    return users;
 }
 
 void UserFile::changeUserInFile(vector <User> &users, User user, string newPassword){

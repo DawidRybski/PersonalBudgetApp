@@ -41,16 +41,16 @@ bool BudgetApp::isUserLogged(){
     userManager.isUserLogged();
 }
 
-void BudgetApp::logInTest(){
-    userManager.logInTest();
-}
-
 void BudgetApp::addTransaction(char option){
     if (option == '1')
     {
         incomeManager->addTransaction();
     }
 
+    system("pause");
+}
+
+void BudgetApp::testDisplayIncomes(){
     incomeManager->testDisplayIncomes();
     system("pause");
 }

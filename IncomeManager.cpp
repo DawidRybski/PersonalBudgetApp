@@ -1,20 +1,19 @@
 #include "IncomeManager.h"
 
 void IncomeManager::addTransaction(){
-    Income income = provideDataOfTheNewIncome();
-    incomes.push_back(income);
+    Income newIncome = provideDataOfTheNewIncome();
+    incomes.push_back(newIncome);
 
-    incomesFile.addTransactionToFile(income);
+    incomesFile.addTransactionToFile(newIncome);
 
     cout << endl << "Przychod zostal zarejestrowany" << endl << endl;
-    system("pause");
 }
 
 Income IncomeManager::provideDataOfTheNewIncome(){
     char character;
     Income income;
 
-    income.setId(getNewIncomeId());
+    income.setId(incomesFile.getLastIncomeIdFromFile() + 1);
     income.setUserId(getLoggedUserId());
 
     cout << "Czy przychod jest z dzisiejszego dnia? (wprowadz 't' aby potwierdzic lub inny znak jezeli przychod jest z innego dnia):";
@@ -34,13 +33,6 @@ Income IncomeManager::provideDataOfTheNewIncome(){
     income.setAmount(Utils::readDouble());
 
     return income;
-}
-
-int IncomeManager::getNewIncomeId(){
-    if (incomes.empty() == true)
-        return 1;
-    else
-        return incomes.back().getId() + 1;
 }
 
 void IncomeManager::testDisplayIncomes(){
