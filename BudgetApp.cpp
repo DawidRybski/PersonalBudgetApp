@@ -8,6 +8,7 @@ void BudgetApp::userLogIn(){
     userManager.userLogIn();
     if(userManager.isUserLogged()){
         incomeManager = new IncomeManager(userManager.getLoggedUserId(), "incomes.xml");
+        expenseManager = new ExpenseManager(userManager.getLoggedUserId());
     }
 }
 
@@ -15,6 +16,8 @@ void BudgetApp::userLogOut(){
     userManager.userLogOut();
     delete incomeManager;
     incomeManager = nullptr;
+    delete expenseManager;
+    expenseManager = nullptr;
 }
 
 void BudgetApp::changeLoggedUserPassword(){
@@ -45,12 +48,18 @@ void BudgetApp::addTransaction(char option){
     if (option == '1')
     {
         incomeManager->addTransaction();
+    } else {
+        expenseManager->addTransaction();
     }
-
     system("pause");
 }
 
 void BudgetApp::testDisplayIncomes(){
     incomeManager->testDisplayIncomes();
+    system("pause");
+}
+
+void BudgetApp::testDisplayExpenses(){
+    expenseManager->testDisplayExpenses();
     system("pause");
 }

@@ -33,8 +33,8 @@ int main()
                 break;
             }
         } else {
-            budgetApp.addTransaction('1');
-            budgetApp.testDisplayIncomes();
+            budgetApp.addTransaction('2');
+            budgetApp.testDisplayExpenses();
 
             budgetApp.userLogOut();
         }
