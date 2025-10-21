@@ -12,17 +12,17 @@ class User{
     string password;
 
 public:
-    void setId(int newId);
-    void setName(string newName);
-    void setSurname(string newSurname);
-    void setLogin(string newLogin);
-    void setPassword(string newPassword);
-
     int getId();
     string getName();
     string getSurname();
     string getLogin();
     string getPassword();
+
+    void setId(int newId);
+    void setName(string newName);
+    void setSurname(string newSurname);
+    void setLogin(string newLogin);
+    void setPassword(string newPassword);
 };
 
 #endif
