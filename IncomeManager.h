@@ -1,7 +1,6 @@
 #include <iostream>
 #include <vector>
 #include <windows.h>
-#include <fstream>
 #include <sstream>
 #include "Income.h"
 #include "Utils.h"

@@ -1,7 +1,7 @@
 #include <iomanip>
 #include "UserManager.h"
-#include "TransactionManager.h"
 #include "IncomeManager.h"
+#include "ExpenseManager.h"
 
 using namespace std;
 
@@ -9,12 +9,14 @@ class BudgetApp{
 
     UserManager userManager;
     IncomeManager *incomeManager;
+    ExpenseManager *expenseManager;
 //    const string INCOMES_FILE_NAME;
 
 public:
-    BudgetApp(string usersFileName) : userManager(usersFileName), incomeManager(nullptr){};
+    BudgetApp(string usersFileName) : userManager(usersFileName), incomeManager(nullptr), expenseManager(nullptr){};
     ~BudgetApp(){
         delete incomeManager;
+        delete expenseManager;
     }
     char selectAnOptionFromTheMainMenu();
     void registerUser();
@@ -24,4 +26,5 @@ public:
     bool isUserLogged();
     void addTransaction(char option);
     void testDisplayIncomes();
+    void testDisplayExpenses();
 };

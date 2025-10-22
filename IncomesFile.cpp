@@ -34,8 +34,7 @@ vector <Income> IncomesFile::readTransactionsFromfile(int loggedUserId){
     bool fileExists = xml.Load(getFileName());
 
     if (!fileExists) {
-        cout << "Nie udalo sie wczytac pliku XML!" << endl;
-        return incomes;
+        xml.SetDoc("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n");
     }
 
     if (xml.FindElem("Incomes")) {
@@ -79,7 +78,6 @@ int IncomesFile::getLastIncomeIdFromFile(){
     bool fileExists = xml.Load(getFileName());
 
     if (!fileExists) {
-        cout << "Nie udalo sie wczytac pliku XML!" << endl;
         return lastIncomeId;
     }
 
