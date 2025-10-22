@@ -8,7 +8,7 @@ void BudgetApp::userLogIn(){
     userManager.userLogIn();
     if(userManager.isUserLogged()){
         incomeManager = new IncomeManager(userManager.getLoggedUserId(), "incomes.xml");
-        expenseManager = new ExpenseManager(userManager.getLoggedUserId());
+        expenseManager = new ExpenseManager(userManager.getLoggedUserId(), "expenses.xml");
     }
 }
 

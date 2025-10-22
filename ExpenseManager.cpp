@@ -4,6 +4,8 @@ void ExpenseManager::addTransaction(){
     Expense newExpense = provideDataOfTheNewExpense();
     expenses.push_back(newExpense);
 
+    expensesFile.addTransactionToFile(newExpense);
+
     cout << endl << "Przychod zostal zarejestrowany" << endl << endl;
 }
 
@@ -11,7 +13,7 @@ Expense ExpenseManager::provideDataOfTheNewExpense(){
     char character;
     Expense expense;
 
-    expense.setId(1);
+    expense.setId(expensesFile.getLastExpenseIdFromFile() + 1);
     expense.setUserId(getLoggedUserId());
 
     cout << "Czy wydatek jest z dzisiejszego dnia? (wprowadz 't' aby potwierdzic lub inny znak jezeli przychod jest z innego dnia):";
