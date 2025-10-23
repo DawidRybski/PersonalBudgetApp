@@ -10,6 +10,8 @@ public:
     virtual ~TransactionManager() = default;
     virtual void addTransaction() = 0;
     int getLoggedUserId() const { return LOGGED_USER_ID; }
+
+    virtual void showTransactionsForDatesRange(const string &dateFrom, const string &dateTo) = 0;
 };
 
 #endif

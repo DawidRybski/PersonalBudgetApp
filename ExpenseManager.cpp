@@ -44,3 +44,15 @@ void ExpenseManager::testDisplayExpenses(){
         cout << e.getAmount() << endl;
     }
 }
+
+void ExpenseManager::showTransactionsForDatesRange(const string &dateFrom, const string &dateTo){
+    sort(expenses.begin(), expenses.end(), Utils::compareByDate<Expense>);
+    cout << endl << "=======WYDATKI======= " << endl;
+    for (const auto& e : expenses){
+        if ((e.getDate() >= dateFrom) && (e.getDate() <= dateTo)){
+            cout << "Data: " << e.getDate() << endl
+            << "Opis: " << e.getDescription() << endl
+            << "Kwota przychodu: " << e.getAmount() << endl << endl;
+        }
+    }
+}

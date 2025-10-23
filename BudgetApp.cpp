@@ -54,8 +54,9 @@ void BudgetApp::addTransaction(char option){
     system("pause");
 }
 
-void BudgetApp::testDisplayIncomes(){
-    incomeManager->testDisplayIncomes();
+void BudgetApp::showTransactionsForDatesRange(){
+    incomeManager->showTransactionsForDatesRange("2000-01-01", "2025-10-23");
+    expenseManager->showTransactionsForDatesRange("2000-01-01", "2025-10-23");
     system("pause");
 }
 

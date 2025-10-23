@@ -25,6 +25,6 @@ public:
     void changeLoggedUserPassword();
     bool isUserLogged();
     void addTransaction(char option);
-    void testDisplayIncomes();
+    void showTransactionsForDatesRange();
     void testDisplayExpenses();
 };

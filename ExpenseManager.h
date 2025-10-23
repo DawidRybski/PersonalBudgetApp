@@ -10,14 +10,13 @@
 class ExpenseManager : public TransactionManager{
     vector <Expense> expenses;
     ExpensesFile expensesFile;
-
     Expense provideDataOfTheNewExpense();
-
 public:
     ExpenseManager(int loggedUserId, string fileName) : TransactionManager(loggedUserId), expensesFile(fileName){
         expenses = expensesFile.readTransactionsFromfile(loggedUserId);
     };
     void addTransaction() override;
     void testDisplayExpenses();
+    void showTransactionsForDatesRange(const string &dateFrom, const string &dateTo) override;
 };
 

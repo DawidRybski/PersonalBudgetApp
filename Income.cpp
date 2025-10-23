@@ -1,22 +1,22 @@
 #include "Income.h"
 
-int Income::getId(){
+int Income::getId() const{
     return id;
 }
 
-int Income::getUserId(){
+int Income::getUserId() const{
     return userId;
 }
 
-string Income::getDate(){
+string Income::getDate() const{
     return date;
 }
 
-string Income::getDescription(){
+string Income::getDescription() const{
     return description;
 }
 
-double Income::getAmount(){
+double Income::getAmount() const{
     return amount;
 }
 

@@ -96,4 +96,3 @@ int ExpensesFile::getLastExpenseIdFromFile(){
 
     return lastExpenseId;
 }
-
