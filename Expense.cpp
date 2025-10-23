@@ -1,22 +1,22 @@
 #include "Expense.h"
 
-int Expense::getId(){
+int Expense::getId() const{
     return id;
 }
 
-int Expense::getUserId(){
+int Expense::getUserId() const{
     return userId;
 }
 
-string Expense::getDate(){
+string Expense::getDate() const{
     return date;
 }
 
-string Expense::getDescription(){
+string Expense::getDescription() const{
     return description;
 }
 
-double Expense::getAmount(){
+double Expense::getAmount() const{
     return amount;
 }
 

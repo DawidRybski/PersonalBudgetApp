@@ -12,11 +12,11 @@ class Income{
     double amount;
 
 public:
-    int getId();
-    int getUserId();
-    string getDate();
-    string getDescription();
-    double getAmount();
+    int getId() const;
+    int getUserId() const;
+    string getDate() const;
+    string getDescription() const;
+    double getAmount() const;
 
     void setId(int newId);
     void setUserId(int newUserId);

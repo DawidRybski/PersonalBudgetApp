@@ -35,12 +35,14 @@ Income IncomeManager::provideDataOfTheNewIncome(){
     return income;
 }
 
-void IncomeManager::testDisplayIncomes(){
-    for (auto& i : incomes){
-        cout << i.getId() << endl;
-        cout << i.getUserId() << endl;
-        cout << i.getDate() << endl;
-        cout << i.getDescription() << endl;
-        cout << i.getAmount() << endl;
+void IncomeManager::showTransactionsForDatesRange(const string &dateFrom, const string &dateTo){
+    sort(incomes.begin(), incomes.end(), Utils::compareByDate<Income>);
+    cout << endl << "=======PRZYCHODY======= " << endl;
+    for (const auto& i : incomes){
+        if ((i.getDate() >= dateFrom) && (i.getDate() <= dateTo)){
+            cout << "Data: " << i.getDate() << endl
+            << "Opis: " << i.getDescription() << endl
+            << "Kwota przychodu: " << i.getAmount() << endl << endl;
+        }
     }
 }

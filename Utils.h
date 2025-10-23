@@ -21,6 +21,11 @@ public:
     static string provideValidDate();
     static string getlastDayOfMonth(int year, int month);
     static string getFirstDayOfMonth(int year, int month);
+
+    template <typename T>
+    static bool compareByDate(const T &a, const T &b){
+        return a.getDate() < b.getDate();
+    };
 };
 
 #endif

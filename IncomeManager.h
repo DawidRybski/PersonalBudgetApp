@@ -11,13 +11,11 @@
 class IncomeManager : public TransactionManager{
     vector <Income> incomes;
     IncomesFile incomesFile;
-
     Income provideDataOfTheNewIncome();
-
 public:
     IncomeManager(int loggedUserId, string fileName) : TransactionManager(loggedUserId), incomesFile(fileName){
         incomes = incomesFile.readTransactionsFromfile(loggedUserId);
     };
     void addTransaction() override;
-    void testDisplayIncomes();
+    void showTransactionsForDatesRange(const string &dateFrom, const string &dateTo) override;
 };

@@ -33,8 +33,9 @@ int main()
                 break;
             }
         } else {
+            budgetApp.addTransaction('1');
             budgetApp.addTransaction('2');
-            budgetApp.testDisplayExpenses();
+            budgetApp.showTransactionsForDatesRange();
 
             budgetApp.userLogOut();
         }
