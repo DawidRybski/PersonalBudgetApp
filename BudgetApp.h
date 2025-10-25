@@ -19,6 +19,7 @@ public:
         delete expenseManager;
     }
     char selectAnOptionFromTheMainMenu();
+    char selectAnOptionFromTheUserMenu();
     void registerUser();
     void userLogIn();
     void userLogOut();

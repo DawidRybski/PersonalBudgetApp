@@ -10,10 +10,8 @@ int main()
     User user;
     char choice;
 
-    while (true)
-    {
-        if (!(budgetApp.isUserLogged()))
-        {
+    while (true){
+        if (!(budgetApp.isUserLogged())){
             choice = budgetApp.selectAnOptionFromTheMainMenu();
 
             switch (choice)
@@ -33,13 +31,32 @@ int main()
                 break;
             }
         } else {
-//            budgetApp.addTransaction('1');
-//            budgetApp.addTransaction('2');
-            budgetApp.showTransactionsAndBalanceForCurrentMonth();
-            budgetApp.showTransactionsAndBalanceForPreviousMonth();
-            budgetApp.showTransactionsAndBalanceForCustomDatesRange();
+            choice = budgetApp.selectAnOptionFromTheUserMenu();
 
-            budgetApp.userLogOut();
+            switch (choice){
+            case '1':
+                budgetApp.addTransaction(choice);
+                break;
+            case '2':
+                budgetApp.addTransaction(choice);
+                break;
+            case '3':
+                budgetApp.showTransactionsAndBalanceForCurrentMonth();
+                break;
+            case '4':
+                budgetApp.showTransactionsAndBalanceForPreviousMonth();
+                break;
+            case '5':
+                budgetApp.showTransactionsAndBalanceForCustomDatesRange();
+                break;
+            case '6':
+                budgetApp.userLogOut();
+                break;
+            default:
+                cout << endl << "Nie ma takiej opcji w menu." << endl << endl;
+                system("pause");
+                break;
+            }
         }
     }
 }

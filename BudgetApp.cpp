@@ -40,6 +40,25 @@ char BudgetApp::selectAnOptionFromTheMainMenu(){
     return choice;
 }
 
+char BudgetApp::selectAnOptionFromTheUserMenu(){
+    char choice;
+
+    system("cls");
+    cout << " >>> MENU  UZYTKOWNIKA <<<" << endl;
+    cout << "---------------------------" << endl;
+    cout << "1. Dodaj przychod" << endl;
+    cout << "2. Dodaj wydatek" << endl;
+    cout << "3. Pokaz transakcje i bilans z biezacego miesiaca" << endl;
+    cout << "4. Pokaz transakcje i bilans z poprzedniego miesiaca" << endl;
+    cout << "5. Pokaz transakcje i bilans z wybranego zakresu dat" << endl;
+    cout << "6. Wyloguj sie" << endl;
+    cout << "---------------------------" << endl;
+    cout << "Twoj wybor: ";
+    choice = Utils::readChar();
+
+    return choice;
+}
+
 bool BudgetApp::isUserLogged(){
     userManager.isUserLogged();
 }
@@ -48,22 +67,11 @@ void BudgetApp::addTransaction(char option){
     if (option == '1')
     {
         incomeManager->addTransaction();
-    } else {
+    } else if (option == '2'){
         expenseManager->addTransaction();
     }
     system("pause");
 }
-
-//void BudgetApp::showTransactionsForDatesRange(){
-//    incomeManager->showTransactionsForDatesRange("2000-01-01", "2025-10-23");
-//    expenseManager->showTransactionsForDatesRange("2000-01-01", "2025-10-23");
-//}
-//
-//void BudgetApp::showBalanceForDatesRange(){
-//    cout << "Przychody: " << incomeManager->calculateSumOfTransactionsAmount("2000-01-01", "2025-10-23") << endl;
-//    cout << "Wydatki: " << expenseManager->calculateSumOfTransactionsAmount("2000-01-01", "2025-10-23") << endl;
-//    system("pause");
-//}
 
 void BudgetApp::showTransactionsAndBalanceForCurrentMonth(){
     cout << "Transakcje z biezacego miesiaca: " << endl;
