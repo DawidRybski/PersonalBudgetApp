@@ -19,8 +19,9 @@ public:
     static bool isLeapYear(int year);
     static bool isValidDate(string date);
     static string provideValidDate();
-    static string getlastDayOfMonth(int year, int month);
-    static string getFirstDayOfMonth(int year, int month);
+    static string getlastDayOfPreviousMonth();
+    static string getFirstDayOfCurrentMonth();
+    static string getFirstDayOfPreviousMonth();
 
     template <typename T>
     static bool compareByDate(const T &a, const T &b){

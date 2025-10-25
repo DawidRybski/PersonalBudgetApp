@@ -56,3 +56,16 @@ void ExpenseManager::showTransactionsForDatesRange(const string &dateFrom, const
         }
     }
 }
+
+double ExpenseManager::calculateSumOfTransactionsAmount(const string &dateFrom, const string &dateTo){
+    sort(expenses.begin(), expenses.end(), Utils::compareByDate<Expense>);
+    double sum = 0.0;
+
+    for (const auto& e : expenses){
+        if ((e.getDate() >= dateFrom) && (e.getDate() <= dateTo)){
+            sum += e.getAmount();
+        }
+    }
+
+    return sum;
+}

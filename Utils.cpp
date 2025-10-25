@@ -130,7 +130,19 @@ string Utils::provideValidDate() {
     return providedDate;
 }
 
-string Utils::getlastDayOfMonth(int year, int month){
+string Utils::getlastDayOfPreviousMonth(){
+    time_t now = time(nullptr);
+
+    tm localTime{};
+    #ifdef _WIN32
+    localtime_s(&localTime, &now);
+    #else
+    localtime_r(&now, &localTime);
+    #endif
+
+    int year  = localTime.tm_year + 1900;
+    int month = localTime.tm_mon;
+
     int daysInMonth[] = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
     if (month == 2 && isLeapYear(year)) daysInMonth[1] = 29;
 
@@ -139,7 +151,37 @@ string Utils::getlastDayOfMonth(int year, int month){
     return ss.str();
 }
 
-string Utils::getFirstDayOfMonth(int year, int month){
+string Utils::getFirstDayOfCurrentMonth(){
+    time_t now = time(nullptr);
+
+    tm localTime{};
+    #ifdef _WIN32
+    localtime_s(&localTime, &now);
+    #else
+    localtime_r(&now, &localTime);
+    #endif
+
+    int year  = localTime.tm_year + 1900;
+    int month = localTime.tm_mon + 1;
+
+    stringstream ss;
+    ss << year << "-" << addZeroToSingleDigitNumber(month) << "-01";
+    return ss.str();
+}
+
+string Utils::getFirstDayOfPreviousMonth(){
+    time_t now = time(nullptr);
+
+    tm localTime{};
+    #ifdef _WIN32
+    localtime_s(&localTime, &now);
+    #else
+    localtime_r(&now, &localTime);
+    #endif
+
+    int year  = localTime.tm_year + 1900;
+    int month = localTime.tm_mon;
+
     stringstream ss;
     ss << year << "-" << addZeroToSingleDigitNumber(month) << "-01";
     return ss.str();

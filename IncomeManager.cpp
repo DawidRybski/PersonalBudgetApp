@@ -46,3 +46,16 @@ void IncomeManager::showTransactionsForDatesRange(const string &dateFrom, const 
         }
     }
 }
+
+double IncomeManager::calculateSumOfTransactionsAmount(const string &dateFrom, const string &dateTo){
+    sort(incomes.begin(), incomes.end(), Utils::compareByDate<Income>);
+    double sum = 0.0;
+
+    for (const auto& i : incomes){
+        if ((i.getDate() >= dateFrom) && (i.getDate() <= dateTo)){
+            sum += i.getAmount();
+        }
+    }
+
+    return sum;
+}

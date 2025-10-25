@@ -18,4 +18,5 @@ public:
     };
     void addTransaction() override;
     void showTransactionsForDatesRange(const string &dateFrom, const string &dateTo) override;
+    double calculateSumOfTransactionsAmount(const string &dateFrom, const string &dateTo) override;
 };

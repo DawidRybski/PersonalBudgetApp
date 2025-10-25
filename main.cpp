@@ -33,9 +33,9 @@ int main()
                 break;
             }
         } else {
-            budgetApp.addTransaction('1');
-            budgetApp.addTransaction('2');
-            budgetApp.showTransactionsForDatesRange();
+//            budgetApp.addTransaction('1');
+//            budgetApp.addTransaction('2');
+            budgetApp.showTransactionsAndBalanceForCurrentMonth();
 
             budgetApp.userLogOut();
         }
