@@ -102,3 +102,24 @@ void BudgetApp::showTransactionsAndBalanceForPreviousMonth(){
     cout << "Bilans z poprzedniego miesiaca: " << totalBalance << endl;
     system("pause");
 }
+
+void BudgetApp::showTransactionsAndBalanceForCustomDatesRange(){
+    cout << "Wprowadz date poczatkowa: ";
+    string firstDayOfCustomDate = Utils::provideValidDate();
+    cout << "Wprowadz date koncowa: ";
+    string lastDayOfCustomDate = Utils::provideValidDate();
+
+    cout << "Transakcje z wybranego zakresu dat: " << endl;
+    vector <TransactionManager*> managers = {incomeManager, expenseManager};
+
+    for (TransactionManager* manager : managers){
+        manager->showTransactionsForDatesRange(firstDayOfCustomDate, lastDayOfCustomDate);
+    }
+
+    double totalIncome = incomeManager->calculateSumOfTransactionsAmount(firstDayOfCustomDate, lastDayOfCustomDate);
+    double totalExpense = expenseManager->calculateSumOfTransactionsAmount(firstDayOfCustomDate, lastDayOfCustomDate);
+    double totalBalance = totalIncome - totalExpense;
+
+    cout << "Bilans z wybranego zakresu dat: " << totalBalance << endl;
+    system("pause");
+}

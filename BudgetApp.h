@@ -27,4 +27,5 @@ public:
     void addTransaction(char option);
     void showTransactionsAndBalanceForCurrentMonth();
     void showTransactionsAndBalanceForPreviousMonth();
+    void showTransactionsAndBalanceForCustomDatesRange();
 };
