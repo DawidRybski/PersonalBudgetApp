@@ -26,4 +26,5 @@ public:
     bool isUserLogged();
     void addTransaction(char option);
     void showTransactionsAndBalanceForCurrentMonth();
+    void showTransactionsAndBalanceForPreviousMonth();
 };
