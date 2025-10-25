@@ -12,6 +12,7 @@ public:
     int getLoggedUserId() const { return LOGGED_USER_ID; }
 
     virtual void showTransactionsForDatesRange(const string &dateFrom, const string &dateTo) = 0;
+    virtual double calculateSumOfTransactionsAmount(const string &dateFrom, const string &dateTo) = 0;
 };
 
 #endif
