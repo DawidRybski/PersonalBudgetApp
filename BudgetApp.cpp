@@ -66,6 +66,7 @@ void BudgetApp::addTransaction(char option){
 //}
 
 void BudgetApp::showTransactionsAndBalanceForCurrentMonth(){
+    cout << "Transakcje z biezacego miesiaca: " << endl;
     vector <TransactionManager*> managers = {incomeManager, expenseManager};
 
     string firstDayOfCurrentMonth = Utils::getFirstDayOfCurrentMonth();
@@ -79,6 +80,25 @@ void BudgetApp::showTransactionsAndBalanceForCurrentMonth(){
     double totalExpense = expenseManager->calculateSumOfTransactionsAmount(firstDayOfCurrentMonth, currentDate);
     double totalBalance = totalIncome - totalExpense;
 
-    cout << "Bilans biezacego miesiaca: " << totalBalance << endl;
+    cout << "Bilans z biezacego miesiaca: " << totalBalance << endl;
+    system("pause");
+}
+
+void BudgetApp::showTransactionsAndBalanceForPreviousMonth(){
+    cout << "Transakcje z poprzedniego miesiaca: " << endl;
+    vector <TransactionManager*> managers = {incomeManager, expenseManager};
+
+    string firstDayOfPreviousMonth = Utils::getFirstDayOfPreviousMonth();
+    string lastDayOfPreviousMonth = Utils::getlastDayOfPreviousMonth();
+
+    for (TransactionManager* manager : managers){
+        manager->showTransactionsForDatesRange(firstDayOfPreviousMonth, lastDayOfPreviousMonth);
+    }
+
+    double totalIncome = incomeManager->calculateSumOfTransactionsAmount(firstDayOfPreviousMonth, lastDayOfPreviousMonth);
+    double totalExpense = expenseManager->calculateSumOfTransactionsAmount(firstDayOfPreviousMonth, lastDayOfPreviousMonth);
+    double totalBalance = totalIncome - totalExpense;
+
+    cout << "Bilans z poprzedniego miesiaca: " << totalBalance << endl;
     system("pause");
 }
