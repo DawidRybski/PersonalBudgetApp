@@ -50,6 +50,9 @@ int main()
                 budgetApp.showTransactionsAndBalanceForCustomDatesRange();
                 break;
             case '6':
+                budgetApp.changeLoggedUserPassword();
+                break;
+            case '7':
                 budgetApp.userLogOut();
                 break;
             default:

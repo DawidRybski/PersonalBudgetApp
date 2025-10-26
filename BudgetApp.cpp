@@ -51,7 +51,8 @@ char BudgetApp::selectAnOptionFromTheUserMenu(){
     cout << "3. Pokaz transakcje i bilans z biezacego miesiaca" << endl;
     cout << "4. Pokaz transakcje i bilans z poprzedniego miesiaca" << endl;
     cout << "5. Pokaz transakcje i bilans z wybranego zakresu dat" << endl;
-    cout << "6. Wyloguj sie" << endl;
+    cout << "6. Zmien haslo" << endl;
+    cout << "7. Wyloguj sie" << endl;
     cout << "---------------------------" << endl;
     cout << "Twoj wybor: ";
     choice = Utils::readChar();
